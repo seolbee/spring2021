@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="CollectionBean2" class="com.yydh.myapp2.CollectionBean2">
+		<property name="addressList">
+			<map>
+				<entry>
+					<key>
+						<value>양영디지털고등학교</value>
+					</key>
+					<value>경기도 성남시 분당구 서현동</value>
+				</entry>
+				<entry>
+					<key>
+						<value>고길동</value>
+					</key>
+					<value>서울시 강남구 역삼동</value>
+				</entry>
+				<entry>
+					<key>
+						<value>마이콜</value>
+					</key>
+					<value>서울시 강서구 화곡동</value>
+				</entry>
+			</map>
+		</property>
+	</bean>
+</beans>

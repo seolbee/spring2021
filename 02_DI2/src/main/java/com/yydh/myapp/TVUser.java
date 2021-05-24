@@ -17,9 +17,9 @@ public class TVUser {
 		 * IoC-XML 방식
 		 */
 		
-		AbstractApplicationContext factory = new GenericXmlApplicationContext("applicationContext2.xml");
+		AbstractApplicationContext factory = new GenericXmlApplicationContext("applicationContext.xml");
 		
-		TV tv = (TV) factory.getBean("tv");
+		TV tv = (TV) factory.getBean("samsungTV");
 		tv.powerOn();
 		tv.volumneUp();
 		tv.volumneDown();

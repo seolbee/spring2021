@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="collectionBean" class="com.yydh.myapp2.CollectionBean">
+		<property name="addressList">
+			<set>
+				<value>서울시 강남구 역삼동</value>
+				<value>경기도 성남시 분당구 서현동</value>
+				<value>서울시 강남구 역삼동</value>
+			</set>
+		</property>
+	</bean>
+</beans>
