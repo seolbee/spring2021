@@ -2,8 +2,8 @@ package com.yydh.myapp;
 
 public interface Speaker {
 
-	void volumneDown();
+	void volumeUp();
 
-	void volumneUp();
+	void volumeDown();
 
 }

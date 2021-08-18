@@ -3,21 +3,16 @@ package com.yydh.myapp;
 import org.springframework.stereotype.Component;
 
 @Component("sony")
-public class SonySpeaker implements Speaker {
-	private String name = "Sony 스피커";
-	
+public class SonySpeaker implements Speaker{
 	public SonySpeaker() {
-		System.out.println(name+"==> 객체 생성 완료!");
+		System.out.println("===> SonySpeaker 객체 생성");
 	}
 	
-	@Override
-	public void volumneDown() {
-		System.out.println(name + "---볼륨을 내린다.");
-		
+	public void volumeUp() {
+		System.out.println("SonySpeaker---소리 올린다.");
 	}
-
-	@Override
-	public void volumneUp() {
-		System.out.println(name + "---볼륨을 높인다.");
+	
+	public void volumeDown() {
+		System.out.println("SonySpeaker---소리 내린다.");
 	}
 }
