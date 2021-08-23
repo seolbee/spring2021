@@ -35,7 +35,7 @@ public class GetBoardListController implements Controller{
 //		response.sendRedirect("getBoardList.jsp");
 		
 		ModelAndView mav = new ModelAndView();
-		request.setAttribute("boardList", boardList);
+		mav.addObject("boardList", boardList);
 		mav.setViewName("getBoardList");
 		
 		return mav;

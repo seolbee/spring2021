@@ -23,7 +23,7 @@ public class GetBoardController implements Controller{
 		// 세션에 데이터 전달
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("board", board);
-		mav.setViewName("getBoard.jsp");
+		mav.setViewName("getBoard");
 		
 		// 리다이렉트
 //		response.sendRedirect("getBoard.jsp");

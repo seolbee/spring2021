@@ -39,7 +39,7 @@ public class LoginController implements Controller{
 			mav.setViewName("redirect:getBoardList.do");
 		} else {
 //			response.sendRedirect("login.jsp");
-			mav.setViewName("login.jsp");
+			mav.setViewName("login");
 		}
 		return mav;
 	}
