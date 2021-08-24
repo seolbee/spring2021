@@ -30,7 +30,7 @@ public class InsertBoardController implements Controller{
 		
 		// 3. 리다이렉트
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("getBoardList.do");
+		mav.setViewName("redirect:getBoardList.do");
 		return mav;
 	}
 }

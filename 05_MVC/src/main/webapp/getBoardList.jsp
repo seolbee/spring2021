@@ -1,9 +1,6 @@
 <%@page import="com.yydh.model.board.BoardVO"%>
 <%@page import="java.util.List"%>
-<%
-	// 세션에서 게시판 목록 데이터 가져옴
-	List<BoardVO> boardList= (List)request.getAttribute("boardList");
-%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR" %>
     <!DOCTYPE html>
     <html>
@@ -46,19 +43,15 @@
                     <th bgcolor="orange" width="100">조회수</th>
                 </tr>
                 <!--JSP 문법-->
-                <%
-                	for(BoardVO board : boardList) {
-                %>
-                <tr>
-                    <td><%=board.getSeq() %></td>
-                    <td><a href="getBoard.do?seq=<%=board.getSeq()%>"><%=board.getTitle() %></a></td>
-                    <td><%=board.getWriter() %></td>
-                    <td><%=board.getRegDate() %></td>
-                    <td><%=board.getCnt() %></td>
-                </tr>
-                <%
-                	}
-                %>
+                <c:forEach items="${boardList}" var="board">
+                	<tr>
+                    	<td>${board.seq}</td>
+                    	<td><a href="getBoard.do?seq=${board.seq}">${board.title}</a></td>
+                    	<td>${board.writer}</td>
+                    	<td>${board.regDate}</td>
+                    	<td>${board.cnt}</td>
+                	</tr>
+                </c:forEach>
             </table>
             <br/>
             <a href="insertBoard.jsp">새 글 등록</a>
