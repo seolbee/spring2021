@@ -12,7 +12,7 @@ import org.springframework.web.servlet.mvc.Controller;
 import com.yydh.model.board.BoardDAO;
 import com.yydh.model.board.BoardVO;
 
-public class GetBoardListController implements Controller{
+public class GetBoardListController implements Controller {
 
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -29,16 +29,18 @@ public class GetBoardListController implements Controller{
 			BoardDAO boardDAO = new BoardDAO();
 			boardList = boardDAO.getBoardList();
 		}
+		
 		// 2. 검색 결과를 세션에 저장하고 목록 화면으로 이동
 //		HttpSession session = request.getSession();
 //		session.setAttribute("boardList", boardList);
 //		response.sendRedirect("getBoardList.jsp");
 		
+		// ModelAndView로 결과 화면을 생성
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("boardList", boardList);
-		mav.setViewName("getBoardList");
+		mav.addObject("boardList", boardList); // Model 정보 저장
+		mav.setViewName("getBoardList"); // View 정보 저장 
 		
 		return mav;
 	}
-	
+
 }

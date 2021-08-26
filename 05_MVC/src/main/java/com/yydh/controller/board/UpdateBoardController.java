@@ -9,9 +9,12 @@ import org.springframework.web.servlet.mvc.Controller;
 import com.yydh.model.board.BoardDAO;
 import com.yydh.model.board.BoardVO;
 
-public class UpdateBoardController implements Controller{
+public class UpdateBoardController implements Controller {
+
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		System.out.println("글 수정 처리");
+		
 		// 1. 사용자 입력 정보 추출
 		request.setCharacterEncoding("EUC-KR");
 		String title = request.getParameter("title");
@@ -33,4 +36,5 @@ public class UpdateBoardController implements Controller{
 		mav.setViewName("redirect:getBoardList.do");
 		return mav;
 	}
+
 }

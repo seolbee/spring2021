@@ -1,5 +1,6 @@
 package com.yydh.service.board;
 
+import java.sql.Date;
 import java.util.List;
 
 import org.springframework.context.support.GenericXmlApplicationContext;

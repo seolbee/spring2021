@@ -15,35 +15,40 @@
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
 
-	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
-	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<beans:property name="prefix" value="/" />
-		<beans:property name="suffix" value=".jsp" />
-	</beans:bean>
-	
-	<context:component-scan base-package="com.yydh" />
-	
+	<!-- Controller Bean -->
 	<beans:bean id="login" class="com.yydh.controller.user.LoginController"/>
-	<beans:bean id="getBoardList" class="com.yydh.controller.board.GetBoardListController"/>
 	<beans:bean id="logout" class="com.yydh.controller.user.LogoutController"/>
-	<beans:bean id="getBoard" class="com.yydh.controller.board.GetBoardController"/>
-	<beans:bean id="insertBoard" class="com.yydh.controller.board.InsertBoardController"/>
-	<beans:bean id="updateBoard" class="com.yydh.controller.board.UpdateBoardController"/>
-	<beans:bean id="deleteBoard" class="com.yydh.controller.board.DeleteBoardController"/>
+	<beans:bean id="getBoardList" class="com.yydh.controller.board.GetBoardListController" />
+	<beans:bean id="getBoard" class="com.yydh.controller.board.GetBoardController" />
+	<beans:bean id="insertBoard" class="com.yydh.controller.board.InsertBoardController" />
+	<beans:bean id="updateBoard" class="com.yydh.controller.board.UpdateBoardController" />
+	<beans:bean id="deleteBoard" class="com.yydh.controller.board.DeleteBoardController" />
 	
-	<beans:bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+	<!-- HandlerMapping -->
+	<beans:bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping"> 
 		<beans:property name="mappings">
 			<beans:props>
 				<beans:prop key="/login.do">login</beans:prop>
-				<beans:prop key="/getBoardList.do">getBoardList</beans:prop>
 				<beans:prop key="/logout.do">logout</beans:prop>
 				<beans:prop key="/getBoard.do">getBoard</beans:prop>
+				<beans:prop key="/getBoardList.do">getBoardList</beans:prop>
 				<beans:prop key="/insertBoard.do">insertBoard</beans:prop>
 				<beans:prop key="/updateBoard.do">updateBoard</beans:prop>
 				<beans:prop key="/deleteBoard.do">deleteBoard</beans:prop>
 			</beans:props>
 		</beans:property>
 	</beans:bean>
+
+
+
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>
+	
+	<context:component-scan base-package="com.yydh" />
+	
 	
 	
 </beans:beans>

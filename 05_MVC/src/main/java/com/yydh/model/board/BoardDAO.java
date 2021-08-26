@@ -19,8 +19,8 @@ public class BoardDAO {
 	private ResultSet rs = null;
 	
 	// SQL ��ɾ��
-	private final String BOARD_INSERT = "INSERT INTO board(seq, title, writer, content, cnt) "
-			+ "VALUES((select nvl(max(seq),0)+1 from board),?,?,?, 1)";
+	private final String BOARD_INSERT = "INSERT INTO board(seq, title, writer, content) "
+			+ "VALUES((select nvl(max(seq),0)+1 from board),?,?,?)";
 	
 	private final String BOARD_UPDATE = "UPDATE board SET title=?, content=? WHERE seq=?";
 	private final String BOARD_DELETE = "DELETE board WHERE seq=?";

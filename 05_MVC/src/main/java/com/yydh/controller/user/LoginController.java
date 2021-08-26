@@ -10,9 +10,11 @@ import org.springframework.web.servlet.mvc.Controller;
 import com.yydh.model.user.UserDAO;
 import com.yydh.model.user.UserVO;
 
-public class LoginController implements Controller{
+public class LoginController implements Controller {
+
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		System.out.println("로그인 처리");
 		
 		// 1. 사용자 입력 정보 추출
 		String id = request.getParameter("id");
@@ -26,22 +28,18 @@ public class LoginController implements Controller{
 		UserDAO dao = new UserDAO();
 		UserVO user = dao.getUser(vo);
 		
-		HttpSession session = request.getSession();
-		session.setAttribute("id", id);
-		session.setAttribute("password", password);
-		
 		
 		// 3. 화면 네비게이션
 		ModelAndView mav = new ModelAndView();
-		
 		if(user != null) {
 //			response.sendRedirect("getBoardList.do");
 			mav.setViewName("redirect:getBoardList.do");
 		} else {
 //			response.sendRedirect("login.jsp");
-			mav.setViewName("login");
+			mav.setViewName("redirect:login.jsp");
 		}
+		
 		return mav;
 	}
-		
+
 }

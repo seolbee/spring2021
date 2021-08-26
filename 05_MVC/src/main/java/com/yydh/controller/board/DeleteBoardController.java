@@ -8,7 +8,8 @@ import org.springframework.web.servlet.mvc.Controller;
 
 import com.yydh.model.board.BoardDAO;
 
-public class DeleteBoardController implements Controller{
+public class DeleteBoardController implements Controller {
+
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		System.out.println("글 삭제 처리");
@@ -19,9 +20,11 @@ public class DeleteBoardController implements Controller{
 		BoardDAO boardDAO = new BoardDAO();
 		boardDAO.deleteBoard(Integer.parseInt(seq));
 		
-		ModelAndView mav = new ModelAndView();
 		// 리다이렉트
+		ModelAndView mav = new ModelAndView();
 		mav.setViewName("redirect:getBoardList.do");
 		return mav;
 	}
+	
+
 }
